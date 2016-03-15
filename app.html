@@ -2,25 +2,49 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Zino. Your warehouse, everywhere.</title>
+    <title>Zino, Your warehouse everywhere.</title>
+    <!-- init style-sheet -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/wrapper.css">
+    <!-- init fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Anton|Oswald' rel='stylesheet' type='text/css'>
+
+    <!-- init app scripts -->
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/underscore-min.js"></script>
     <script src="js/backbone-min.js"></script>
-    
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Init languages -->
+    <script src="languages/index.js"></script>
+
+    <!-- Init lang -->
+    <script src="utility/app.init.lang.js"></script>
+    <!-- init app controls -->
+    <script src="controls/app.init.alert.js"></script>
+    <script src="controls/app.init.error.js"></script>
+    <script src="controls/app.init.loader.js"></script>
+    <!-- init config -->
+    <script src="config/app.config.js"></script>
+    <!-- init model session -->
+    <script src="models/app.model.session.js"></script>
+    <!-- Init utils -->
+    <script src="utility/app.load.template.js"></script>
+    <!-- Init storage -->
+    <script src="utility/app.init.storage.js"></script>
+    <!-- Init errors -->
+    <script src="errors/app.error.print.js"></script>
+    <!-- Init views -->
+    <script src="views/app.view.index.js"></script>
 </head>
 <body>
     <script src="routes/app.route.js"></script>
-    <div id="app">
-
-    </div>
-    <p>
-        <a id="index">Go to index Router</a>
-    </p>
-    <p>
-        <a id="test">Go to Test Router</a>
-    </p>
-    <p>
-        <a id="test2">Go to Test2 Router</a>
-    </p>
+    <div id="container_alert"></div>
+    <div id="container_error"></div>
+    <div id="container_loader"></div>
+    <div id="container_menu"></div>
+    <div id="app"></div>
 </body>
 </html>

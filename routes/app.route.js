@@ -27,7 +27,7 @@
 			'test2': 'test2'
 		},
 		index: function () {
-			$("#app").empty().append("Index route has been called..");
+			return new app_view_index({ el: $("#app") }).initialize();
 		},
 		test: function () {
     		$("#app").empty().append("Test route has been called..");
@@ -43,10 +43,13 @@
 		}
 
 	});
-
-	router = new App.Router();
 	//Backbone.history.start();
+
+	/* init router */
+	router = new App.Router();
 	Backbone.history.start({ pushState: true });
+
+	/* init app start app with index */
 	router.navigate('', true, true);
 
 });
