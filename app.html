@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/underscore-min.js"></script>
+    <script src="js/backbone-min.js"></script>
+    
+</head>
+<body>
+    <script>
+        $(function () {
+
+            $("#test").click(function () {
+                router.navigate('test', true, true);
+            });
+
+            $("#test2").click(function () {
+                router.navigate('test2', true, true);
+            });
+
+        window.App = {
+            Models: {},
+            Collections: {},
+            Views: {},
+            Router: {}
+        };
+
+        App.Router = Backbone.Router.extend({
+            routes: {
+                '': 'index',
+                'show/:id': 'show',
+                'test': 'test',
+                'test2': 'test2'
+            },
+            index: function () {
+                $("#app").html('');
+                $("#app").append("Index route has been called..");
+            },
+            test: function () {
+                $("#app").html('');
+                $("#app").append("Test route has been called..");
+            },
+            test2: function () {
+                $("#app").html('');
+                $("#app").append("Test2 route has been called..");
+            },
+            show: function (id) {
+                $(document.body).append("Show route has been called.. with id equals : " + id);
+            },
+
+            download: function (random) {
+                $(document.body).append("download route has been called.. with random equals : " + random);
+            },
+
+            search: function (query) {
+                $(document.body).append("Search route has been called.. with query equals : " + query);
+            },
+
+            default: function (other) {
+                $(document.body).append("This route is not hanled.. you tried to access: " + other);
+
+            }
+
+        });
+
+        router = new App.Router();
+        //Backbone.history.start();
+        Backbone.history.start({ pushState: true });
+
+    });
+    </script>
+    <div id="app">
+
+    </div>
+    <p>
+        <a id="test">Go to Test Router</a>
+    </p>
+    <p>
+        <a id="test2">Go to Test2 Router</a>
+    </p>
+</body>
+</html>
