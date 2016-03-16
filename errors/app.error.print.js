@@ -20,15 +20,13 @@ function printError(delegateName, strError) {
     return false;
 }
 function displayError(strError) {
-    $('#errorTitle').empty().append("<b class='control-label' ita='Attenzione!' eng='Warning!'></b>");
-    $('#stringError').empty();
     if (!strError) {
-        $('#stringError').append('<p>' + appMessage.defaultRequired + '</p>');
+        appError.text = appMessage.defaultRequired;
     }
     else {
-        $('#stringError').append('<span style="font-weight:normal;"' + strError + '</span>');
+        appError.text = strError;
     }
-    $('#mainError').show().delay(3000).fadeOut();
+    appError.show();
     initLang();
     return false;
 }

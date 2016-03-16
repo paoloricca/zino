@@ -2,15 +2,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Zino, Your warehouse everywhere.</title>
+    <title>Zino.cloud</title>
     <!-- init style-sheet -->
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
-    <link rel="stylesheet" type="text/css" href="css/wrapper.css">
-    <!-- init fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Anton|Oswald' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/wrapper.css" />
+    <link rel="stylesheet" type="text/css" href="css/treeview.css" />
 
+    <!-- init fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Anton|Oswald' rel='stylesheet' type='text/css' />
+    <link href="http://db.onlinewebfonts.com/c/f3fa86edfc2b810bf7a3ea7cf010d292?family=Roboto" rel="stylesheet" type="text/css" />
+    <link href="http://db.onlinewebfonts.com/c/5673da52c98bb6cb33ada5aaf649703e?family=RobotoRegular" rel="stylesheet" type="text/css" />
+    <link href="http://db.onlinewebfonts.com/c/866186b8ca0d1844fc7e2771c2d9ce6c?family=HelveticaBold" rel="stylesheet" type="text/css" />
+    <link href="http://db.onlinewebfonts.com/c/bec9cfcd690948400517b31821c873e1?family=Helvetica" rel="stylesheet" type="text/css" />
+    <link href="http://db.onlinewebfonts.com/c/7ff4438405bfb9fe87b606ca356ba6a0?family=Roboto+Condensed" rel="stylesheet" type="text/css" />
+    
     <!-- init app scripts -->
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/underscore-min.js"></script>
@@ -26,18 +33,20 @@
     <script src="controls/app.init.alert.js"></script>
     <script src="controls/app.init.error.js"></script>
     <script src="controls/app.init.loader.js"></script>
-    <!-- init config -->
-    <script src="config/app.config.js"></script>
     <!-- init model session -->
     <script src="models/app.model.session.js"></script>
-    <!-- Init utils -->
-    <script src="utility/app.load.template.js"></script>
     <!-- Init storage -->
     <script src="utility/app.init.storage.js"></script>
+    <!-- init config -->
+    <script src="config/app.config.js"></script>
+    <!-- Init utils -->
+    <script src="utility/app.load.template.js"></script>
     <!-- Init errors -->
     <script src="errors/app.error.print.js"></script>
     <!-- Init views -->
     <script src="views/app.view.index.js"></script>
+    <script src="views/app.view.menu.js"></script>
+    <script src="views/app.view.mode.structure.js"></script>
 </head>
 <body>
     <script src="routes/app.route.js"></script>

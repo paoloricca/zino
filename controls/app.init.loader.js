@@ -4,9 +4,8 @@
         this.draw()
     },
     render: function () {
-        $('<div class="alert alert-warning">' +
-            '<i class="fa fa-spinner fa-pulse" style="float:right"></i>' +
-            '<span class="control-label">' + appMessage.loader + '</span>' +
+        $('<div class="col-xs-12" style="background-color:#fff; border:1px solid #e1e1e1;">' +
+            '<h6 class="control-label col-xs-12 text-warning"><i class="fa fa-spinner fa-pulse pull-left"></i>' + appMessage.loader + '</h6>' +
             '</div>').appendTo($("#" + this.collection.id));
     },
     draw: function () {
@@ -21,7 +20,7 @@
 });
 /* {initialize} system-objects */
 $(function () {
-    appLoader = new loader({
+    spinner = new loader({
         collection: {
             id: "container_loader",
         }

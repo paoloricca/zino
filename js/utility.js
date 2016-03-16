@@ -7,16 +7,6 @@ function initApp() {
     initLang();
     initCustomCtl();
 }
-function clearSession() {
-    localStorage.clear();
-    appNotify.type = "ERR";
-    appNotify.title = appMessage.sessionExpired;
-    appNotify.text = appMessage.sessionExpiredText;
-    appNotify.show();
-    setTimeout(function () {
-        document.location.href = 'index.html';
-    }, 4000);
-}
 function checkSession() {
     //var dfd = new $.Deferred();
     //$.when( this.callApiRestFermata() )

@@ -1,7 +1,7 @@
 ﻿var appConfig = {
   appName: "",
   licenseKey: "",
-  apiPrefix: "/",
+  apiPrefix: "https://mysterious-hamlet-76883.herokuapp.com/",
 }
 var message = {
   sessionExpired: {
@@ -58,17 +58,17 @@ var message = {
   },
 }
 var appMessage = {
-  //defaultError: message.defaultError[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
-  //defaultConfirm: message.defaultConfirm[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
-  //recordNotFound: message.recordNotFound[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
-  //doubleConfirm: message.doubleConfirm[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
-  //defaultRequired: message.defaultRequired[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
-  //mailError: message.mailError[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
-  //accountAlreadyExist: message.accountAlreadyExist[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
-  //accountNotFound: message.accountNotFound[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
-  //sessionExpired: message.sessionExpired[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
-  //sessionExpiredText: message.sessionExpiredText[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
-  //accountError: message.accountError[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
+  defaultError: message.defaultError[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
+  defaultConfirm: message.defaultConfirm[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
+  recordNotFound: message.recordNotFound[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
+  doubleConfirm: message.doubleConfirm[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
+  defaultRequired: message.defaultRequired[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
+  mailError: message.mailError[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
+  accountAlreadyExist: message.accountAlreadyExist[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
+  accountNotFound: message.accountNotFound[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
+  sessionExpired: message.sessionExpired[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
+  sessionExpiredText: message.sessionExpiredText[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
+  accountError: message.accountError[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
   loader: message.loader[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
-  //initSearch: message.initSearch[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
+  initSearch: message.initSearch[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
 }

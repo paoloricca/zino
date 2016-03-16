@@ -19,4 +19,8 @@ $(function () {
     //});
     //console.log("userStorage.lang: " + userStorage.lang);
 });
+function clearSession() {
+    localStorage.clear();
+    document.location.href = 'app.html';
+}
 

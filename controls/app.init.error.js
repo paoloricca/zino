@@ -1,23 +1,26 @@
 ﻿var error = Backbone.View.extend({
-    title: "",
+    title: null,
     text: "",
     initialize: function () {
         this.render();
     },
     render: function () {
         var self = this;
+        //$("#" + self.collection.id).attr("class", "bg-warning");
         $("#" + self.collection.id).html(
-            '<i class="fa fa-exclamation-triangle" style="font-size:200%;"></i>' +
-            '<div id="errorTitle"></div>' +
-            '<div id="errorText"></div>'
+            '<i class="fa fa-exclamation-triangle pull-right fa-2x text-danger"></i>' +
+            '<h4 id="errorTitle" class="text-danger"></h4>' +
+            '<h5 id="errorText" class="col-xs-12"></h5>'
         );
     },
     draw: function () {
         var self = this;
-        $("#errorTitle").html("");
-        $("#errorText").html("");
-        $("#errorTitle").append("<p>" + self.title + "</p>");
-        $("#errorText").append("<p>" + self.text + "</p>");
+        if (self.title != null) {
+            $("#errorTitle").empty().append(self.title);
+        } else {
+            $('#errorTitle').empty().append("<span class='control-label' ita='Attenzione!' eng='Warning!'></span>");
+        }        
+        $("#errorText").empty().append(self.text);
     },
     show: function () {
         this.draw();
