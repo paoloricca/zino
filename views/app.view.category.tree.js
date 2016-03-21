@@ -44,7 +44,6 @@
                     idAccount: userStorage.Account._id
                 },
                 success: function (data, textStatus, jqXHR) {
-                    //console.log(data)                    
                     if (data.length > 0) {
                         for (i = 0; i <= data.length-1; i++) {
                             if (data[i].idParent != "") {
@@ -70,9 +69,6 @@
                             console.log(_app_view_category_tree.selectedId);
                             _app_view_category_tree.toolBar();
                         })
-                    }
-                    else {
-                        spinner.hide();
                     }
                     spinner.hide();
                 },

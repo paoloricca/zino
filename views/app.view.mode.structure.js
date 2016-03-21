@@ -25,7 +25,11 @@
     },
     editStructureCategory_click: function () {
         _app_view_category_edit._id = _app_view_category_tree.selectedId.substring(_app_view_category_tree.selectedId.indexOf("-") + 1);
-        _app_view_category_edit.descE = $("#" + _app_view_category_edit._id).children("span").html();
+        if ($("#" + _app_view_category_edit._id).children("span").length > 0) {
+            _app_view_category_edit.descE = $("#" + _app_view_category_edit._id).children("span").html();
+        } else {
+            _app_view_category_edit.descE = $("#" + _app_view_category_edit._id).children("a").html();
+        }
         _app_view_category_edit.onConfirm = "editStructureCategory_click_onConfirm";
         _app_view_category_edit.show();
     },
@@ -55,6 +59,7 @@ function deleteStructureCategory_click_onConfirm() {
             success: function (data, textStatus, jqXHR) {
                 console.log(data)
                 _app_view_category_tree.selectedId = "";
+                _app_view_category_tree.toolBar();
                 _app_view_category_tree.load();
             },
             error: function (request, error) {
@@ -82,6 +87,7 @@ function editStructureCategory_click_onConfirm() {
                 console.log(data)
                 _app_view_category_edit.hide()
                 _app_view_category_tree.selectedId = "";
+                _app_view_category_tree.toolBar();
                 _app_view_category_tree.load();
             },
             error: function (request, error) {
@@ -112,6 +118,7 @@ function addStructureCategory_click_onConfirm() {
                 _app_view_category_edit.hide()
                 _app_view_category_tree.selectedId = "";
                 _app_view_category_edit.idParent = "";
+                _app_view_category_tree.toolBar();
                 _app_view_category_tree.load();
             },
             error: function (request, error) {
