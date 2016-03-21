@@ -26,6 +26,8 @@
     { border:0; margin-top:4px; }
 .modal-content, #dBackBanner
     { -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius:2px; behavior:url('border-radius.htc'); }
+#dBackBanner { font-family: 'RobotoRegular'; }
+.modal-content { font-family: 'RobotoRegular'; }
 .dropdown-menu
     { -moz-border-radius: 1px; -webkit-border-radius: 1px; border-radius:1px; behavior:url('border-radius.htc');}
 .modal-title, #messageHeader span
@@ -35,7 +37,7 @@
 .tooltip-icon
     { float:right; margin-left:4px; color:#303030; }
 .popover, .btn, .form-control, .tooltip-inner, .nav-tabs li a
-    { -moz-border-radius: 1px; -webkit-border-radius: 1px; border-radius:1px; behavior:url('border-radius.htc'); }
+    { -moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px; behavior:url('border-radius.htc'); }
 .nav-tabs li a
     { padding:6px; padding-left:12px; padding-right:12px; }
 .tooltip-inner 
@@ -114,3 +116,20 @@
 .open>.dropdown-toggle.btn-primary  {
     background-color:darkcyan; border-color:darkcyan;
 }
+
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+/*** custom checkboxes ***/
+
+input[type=checkbox] { display:none; } /* to hide the checkbox itself */
+input[type=checkbox] + label:before {
+  font-family: FontAwesome;
+  display: inline-block;
+  width:16px;
+}
+
+input[type=checkbox] + label:before { content: "\f1db"; } /* unchecked icon */
+input[type=checkbox] + label:before { letter-spacing: 10px; } /* space between checkbox and label */
+
+input[type=checkbox]:checked + label:before { content: "\f05d"; color:darkcyan; } /* checked icon */
+input[type=checkbox]:checked + label:before { letter-spacing: 5px; } /* allow space for check mark */

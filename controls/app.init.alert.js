@@ -1,4 +1,5 @@
 ﻿var confirm = Backbone.View.extend({
+    hideTitle: false,
     terms: "",
     title: "",
     message: "",
@@ -11,9 +12,9 @@
         var self = this;
         $("#" + self.collection.id).html(
             '<div id="confirm-' + self.collection.id + '" class="modal fade" terms="">' +
-                    '<div class="modal-dialog">' +
-                        '<div class="modal-content">' +
-                        '<div class="modal-header">' +
+                '<div class="modal-dialog">' +
+                    '<div class="modal-content">' +
+                        '<div id="header-' + self.collection.id + '" class="modal-header">' +
                             '<p><i class="fa fa-times pull-right" data-dismiss="modal"></i></p>' +
                             '<h4 class="modal-title"><span class="control-label" id="headerTitle-' + self.collection.id + '">' + self.collection.title + '</span></h4>' +
                         '</div>' +
@@ -56,6 +57,11 @@
             window[self.collection.onConfirm]();
             $("#confirm-" + self.collection.id).modal("hide");
         });
+        if (this.hideTitle) {
+            $("#header-" + self.collection.id).hide();
+        } else {
+            $("#header-" + self.collection.id).show();
+        }
         $("#btnForward-" + self.collection.id).click(function () {
             $("#btnForward-" + self.collection.id).toggle();
             $("#btnOk-" + self.collection.id).toggle()
