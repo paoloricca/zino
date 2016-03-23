@@ -53,10 +53,10 @@ $.fn.extend({
 				$(this).closest('li').click();
 			});
 			//fire event to open branch if the li contains an anchor instead of text
-			$('.branch a').on('click', function (e) {
-				$(this).closest('li').click();
-				e.preventDefault();
-			});
+			//$('.branch a').on('click', function (e) {
+			//	$(this).closest('li').click();
+			//	e.preventDefault();
+			//});
 			//fire event to open branch if the li contains a button instead of text
 			$('.branch button').on('click', function (e) {
 				$(this).closest('li').click();

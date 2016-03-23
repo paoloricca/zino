@@ -102,7 +102,7 @@
                 
                 $("#dLogin").hide();
                 $("#dMyMenu").show();
-                $("#spnNominativo").html(userStorage.Account.name + " " + userStorage.Account.surname);
+                $("#spnNominativo").html(userStorage.Account.name);
                 $("#spnRuoloStatus").show();
                 $("#help").show();
                 //if (self.collection.onConfirm != null) {

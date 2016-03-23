@@ -16,15 +16,17 @@
         var self = this;
     },
     addStructureCategory_click: function () {
+        $("#modal-category-edit-title").html("Aggiungi una nuova categoria");
         _app_view_category_edit._id = "";
-        _app_view_category_edit.idParent = _app_view_category_tree.selectedId.substring(_app_view_category_tree.selectedId.indexOf("-")+1);
+        _app_view_category_edit.idParent = _app_view_category_tree.selectedId.substring(1);
         _app_view_category_edit.descE = null;
         _app_view_category_edit.onConfirm = "addStructureCategory_click_onConfirm";
         _app_view_category_edit.show();
         console.log(_app_view_category_edit.idParent);
     },
     editStructureCategory_click: function () {
-        _app_view_category_edit._id = _app_view_category_tree.selectedId.substring(_app_view_category_tree.selectedId.indexOf("-") + 1);
+        $("#modal-category-edit-title").html("Modifica la categoria selezionata");
+        _app_view_category_edit._id = _app_view_category_tree.selectedId.substring(1);
         if ($("#" + _app_view_category_edit._id).children("span").length > 0) {
             _app_view_category_edit.descE = $("#" + _app_view_category_edit._id).children("span").html();
         } else {
@@ -34,7 +36,7 @@
         _app_view_category_edit.show();
     },
     deleteStructureCategory_click: function () {
-        _app_view_category_edit._id = _app_view_category_tree.selectedId.substring(_app_view_category_tree.selectedId.indexOf("-") + 1);
+        _app_view_category_edit._id = _app_view_category_tree.selectedId.substring(1);
         appAlert.hideTitle = true;
         appAlert.collection.defaultConfirm = appMessage.defaultConfirm;
         appAlert.collection.onConfirm = "deleteStructureCategory_click_onConfirm";

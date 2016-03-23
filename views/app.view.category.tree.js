@@ -16,19 +16,19 @@
     toolBar: function () {
         if ((this.selectedId != "" && this.selectedId.substring(1).split(',').length == 1) ||
             this.selectedId == "") {
-            $("#btnAddStructureCategory").attr("class", "btn btn-default");
+            $("#btnAddStructureCategory").attr("class", "btn btn-default btn-sm");
         } else {
-            $("#btnAddStructureCategory").attr("class", "btn btn-default disabled");
+            $("#btnAddStructureCategory").attr("class", "btn btn-default btn-sm disabled");
         }
         if (this.selectedId != "" && this.selectedId.substring(1).split(',').length >= 1) {
-            $("#btnDeleteStructureCategory").attr("class", "btn btn-default");
+            $("#btnDeleteStructureCategory").attr("class", "btn btn-default btn-sm");
         } else {
-            $("#btnDeleteStructureCategory").attr("class", "btn btn-default disabled");
+            $("#btnDeleteStructureCategory").attr("class", "btn btn-default btn-sm disabled");
         }
         if (this.selectedId != "" && this.selectedId.substring(1).split(',').length == 1) {
-            $("#btnEditStructureCategory").attr("class", "btn btn-default");
+            $("#btnEditStructureCategory").attr("class", "btn btn-default btn-sm");
         } else {
-            $("#btnEditStructureCategory").attr("class", "btn btn-default disabled");
+            $("#btnEditStructureCategory").attr("class", "btn btn-default btn-sm disabled");
         }
     },
     load: function () {
@@ -62,9 +62,9 @@
                         $('.tree').treed();
                         $('.tree input').click(function () {
                             if (this.checked) {
-                                _app_view_category_tree.selectedId += ',' + this.id;
+                                _app_view_category_tree.selectedId += ',' + this.id.substring(this.id.indexOf("-") + 1);
                             } else {
-                                _app_view_category_tree.selectedId = _app_view_category_tree.selectedId.split(',' + this.id).join('');
+                                _app_view_category_tree.selectedId = _app_view_category_tree.selectedId.split(',' + this.id.substring(this.id.indexOf("-") + 1)).join('');
                             }
                             console.log(_app_view_category_tree.selectedId);
                             _app_view_category_tree.toolBar();
