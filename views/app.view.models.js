@@ -17,16 +17,33 @@
     addModels_click: function () {
         $("#modal-models-edit-title").html("Crea un nuovo formulario");
         _app_view_models_edit.descE = null;
+        _app_view_models_edit.type = null;
         _app_view_models_edit.onConfirm = "addModels_click_onConfirm";
         _app_view_models_edit.show();
     },
     editModels_click: function (e) {
         $("#modal-models-edit-title").html("Modifica il formulario selezionato");
         _app_view_models_edit._id = $(e.toElement).parent("li").parent("ul").attr("id");
-        _app_view_models_edit.descE = $(e.toElement).parent("li").parent().parent().parent().parent().children("td").html();
-        _app_view_models_edit.type = 0;
-        _app_view_models_edit.onConfirm = "editModels_click_onConfirm";
-        _app_view_models_edit.show();
+        spinner.show();
+        $.ajax({
+            url: appConfig.apiPrefix + 'models/' + _app_view_models_edit._id,
+            dataType: 'json',
+            type: 'get',
+            success: function (data, textStatus, jqXHR) {
+                console.log(data);
+                if (data.length > 0) {
+                    _app_view_models_edit.descE = data[0].descE
+                    _app_view_models_edit.type = data[0].type;
+                    _app_view_models_edit.onConfirm = "editModels_click_onConfirm";
+                    _app_view_models_edit.show();
+                }
+                spinner.hide();
+            },
+            error: function (request, error) {
+                displayError(error);
+                spinner.hide();
+            }
+        });
     },
     deleteModels_click: function (e) {
         _app_view_models_edit._id = $(e.toElement).parent("li").parent("ul").attr("id");
@@ -76,7 +93,8 @@ function editModels_click_onConfirm() {
             type: 'put',
             data: {
                 _id: _app_view_models_edit._id,
-                descE: _app_view_models_edit.descE
+                descE: _app_view_models_edit.descE,
+                type: _app_view_models_edit.type,
             },
             success: function (data, textStatus, jqXHR) {
                 console.log(data)
@@ -104,7 +122,8 @@ function addModels_click_onConfirm() {
             type: 'post',
             data: {
                 idAccount: userStorage.Account._id,
-                descE: _app_view_models_edit.descE
+                descE: _app_view_models_edit.descE,
+                type: _app_view_models_edit.type,
             },
             success: function (data, textStatus, jqXHR) {
                 console.log(data)
