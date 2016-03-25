@@ -22,7 +22,8 @@
 	App.Router = Backbone.Router.extend({
 		routes: {
 			'': 'index',
-			'structure': 'structure',
+			'category': 'category',
+			'models': 'models',
 			'show/:id': 'show',
 			'test': 'test',
 			'test2': 'test2'
@@ -30,8 +31,11 @@
 		index: function () {
 			return new app_view_index({ el: $("#app") }).initialize();
 		},
-		structure: function () {
-			return new app_view_structure({ el: $("#app") }).initialize();
+		category: function () {
+		    return new app_view_category({ el: $("#app") }).initialize();
+		},
+		models: function () {
+		    return new app_view_models({ el: $("#app") }).initialize();
 		},
 		test: function () {
     		$("#app").empty().append("Test route has been called..");

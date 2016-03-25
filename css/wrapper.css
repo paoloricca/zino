@@ -4,6 +4,12 @@
 .primary-bg {
     background-color:orangered;
 }
+.primary-c {
+    color:orangered;
+}
+.cyan { color: cyan; }
+.magenta { color:magenta; }
+.orange { color:orange; }
 #dLogin label, #dLogin a { color:#505050; text-decoration:none; font-weight:normal;}
 #dMyMenu-bottom-on a, #dMyMenu-bottom-off a {
     text-decoration:none;

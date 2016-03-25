@@ -1,0 +1,50 @@
+﻿<div class="container-fluid">
+    <div id="header" style="margin-top:110px;">
+        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-4">
+            <div class="col-xs-12 panel panel-default">
+                <div class="col-xs-12">
+                    &nbsp;
+                </div>
+                <div class="col-xs-12">
+                    <h4>
+                        <i class="fa fa-code-fork pull-left"></i>
+                        I miei formulari
+                    </h4>
+                </div>
+                <div class="col-xs-12">
+                    <a id="btnAddModels" href="#" class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="bottom"
+                       title="Aggiungi">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+                <div class="col-xs-12">
+                    <hr />
+                </div>
+                <div class="col-xs-12" style="padding:0;">
+                    <div id="models-tree-container">
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    &nbsp;
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-8">
+            <div class="col-xs-12 panel panel-default">
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal-models-edit-container">
+</div>
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip({ html: true });
+        $('[data-toggle="popover"]').popover({ html: true });
+        _app_view_models_tree = new app_view_models_tree({ el: $("#models-tree-container") });
+        _app_view_models_edit = new app_view_models_edit({ el: $("#modal-models-edit-container") });
+    });
+</script>
+

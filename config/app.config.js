@@ -56,6 +56,18 @@ var message = {
     ita: "Clicca qui per iniziare la ricerca",
     eng: "Loading..."
   },
+  evaluationType_1: {
+      ita: "Consentono di raccogliere informazioni ma non possono essere sottoposte a valutazione, <b class=cRosso>se scegli questo tipo la sezione potrà contenere solo domande informative</b>.",
+      eng: "",
+  },
+  evaluationType_2: {
+      ita: "Consentono di raccogliere informazioni ed assegnare un voto alla risposta ottenuta, <b class=cRosso>se scegli questo tipo la sezione potrà contenere solo domande valutative</b>.",
+      eng: "",
+  },
+  evaluationType_3: {
+      ita: "Se scegli questo tipo la sezione potrà includere contemporaneamente domande informative e valutative.",
+      eng: "",
+  },
 }
 var appMessage = {
   defaultError: message.defaultError[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
@@ -71,4 +83,7 @@ var appMessage = {
   accountError: message.accountError[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
   loader: message.loader[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
   initSearch: message.initSearch[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
+  evaluationType_1: message.evaluationType_1[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
+  evaluationType_2: message.evaluationType_2[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
+  evaluationType_3: message.evaluationType_3[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()]
 }

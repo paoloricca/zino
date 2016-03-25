@@ -1,0 +1,74 @@
+﻿<div id="modal-models-edit" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <i class="fa fa-code-fork fa-lg pull-left"></i>
+                <h4 id="modal-models-edit-title" class="modal-title">
+                    Crea un nuovo formulario
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-xs-12">
+                    <label id="lbl-modal-models-edit-descE" for="txt-modal-models-edit-descE">Titolo</label>
+                    <input id="txt-modal-models-edit-descE" type="text" class="form-control input-xs" placeholder="Scrivi qui la descrizione del formulario..." />
+                </div>
+                <div class="col-xs-12">
+                    <label id="lbl-modal-models-edit-descE" for="txt_IDEvaluationType">Tipo</label>
+                    <div class="dropdown input-xs">
+                        <input type="hidden" id="txt_IDEvaluationType" />
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"
+                                style="width:100%;">
+                            <span class="control-label pull-left" ita="..." eng="..."></span>
+                            <span class="caret pull-right"></span>
+                        </button>
+                        <ul class="dropdown-menu combo" style="width:100%;">
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-circle cyan"></i>&nbsp;&nbsp;
+                                    <span id="span-1" value="1" class="control-label" ita="Informative" eng="Informative"
+                                          data-toggle="popover" data-trigger="hover"></span>
+                                    <script>
+                                        $("#span-1").attr('data-content', '<h5><i class="fa fa-question-circle pull-left"></i>' + appMessage.evaluationType_1 + '</h5>');
+                                    </script>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-circle magenta"></i>&nbsp;&nbsp;
+                                    <span id="span-2" value="2" class="control-label infopop" ita="Valutative" eng="Evaluative" 
+                                          data-toggle="popover" data-trigger="hover"></span>
+                                    <script>
+                                        $("#span-2").attr('data-content', '<h5><i class="fa fa-question-circle pull-left"></i>' + appMessage.evaluationType_2 + '</h5>');
+                                    </script>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-circle orange"></i>&nbsp;&nbsp;
+                                    <span id="span-3" value="3" class="control-label infopop" ita="Combinate" eng="Combined" 
+                                          data-toggle="popover" data-trigger="hover"></span>
+                                    <script>
+                                        $("#span-3").attr('data-content', '<h5><i class="fa fa-question-circle pull-left"></i>' + appMessage.evaluationType_3 + '</h5>');
+                                    </script>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnOk"><strong>OK</strong></button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $('[data-toggle="popover"]').popover({ html: true });
+        initCustomCtl();
+        initLang();
+    });
+</script>

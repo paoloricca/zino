@@ -1,4 +1,4 @@
-﻿var app_view_structure = Backbone.View.extend({
+﻿var app_view_category = Backbone.View.extend({
     events: {
         "click #btnAddStructureCategory": "addStructureCategory_click",
         "click #btnEditStructureCategory": "editStructureCategory_click",
@@ -9,7 +9,7 @@
         this.draw();
     },
     render: function () {
-        this.$el.html(loadTemplate(this.$el, 'app.template.mode.structure'));
+        this.$el.html(loadTemplate(this.$el, 'app.template.category'));
         //this.$('#modal-category-edit-container').on('load', this.category_load());
     },
     draw: function () {

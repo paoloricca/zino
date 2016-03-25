@@ -50,7 +50,19 @@ var config = {
     a73de28bba77d3f8f2c0d6f6ef0bf4b9: {
         ita: "Caricamento in corso...",
         eng: "Loading..."
-    }
+    },
+    evaluationType1: {
+        ita: "Consentono di raccogliere informazioni ma non possono essere sottoposte a valutazione, <b class=cRosso>se scegli questo tipo la sezione potrà contenere solo domande informative</b>.",
+        eng: "",
+    },
+    evaluationType2: {
+        ita: "Consentono di raccogliere informazioni ed assegnare un voto alla risposta ottenuta, <b class=cRosso>se scegli questo tipo la sezione potrà contenere solo domande valutative</b>.",
+        eng: "",
+    },
+    evaluationType3: {
+        ita: "Se scegli questo tipo la sezione potrà includere contemporaneamente domande informative e valutative.",
+        eng: "",
+    },
 }
 var appMessage = {
     defaultError: config.defaultError[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
@@ -63,5 +75,8 @@ var appMessage = {
     sessionExpired: config.sessionExpired[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
     sessionExpiredText: config.sessionExpiredText[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
     accountError: config.accountError[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
+    evaluationType1: config.evaluationType1[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
+    evaluationType2: config.evaluationType2[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
+    evaluationType3: config.evaluationType3[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()]
 }
 
