@@ -45,9 +45,14 @@
                 },
                 success: function (data, textStatus, jqXHR) {
                     console.log(data);
+                    var type = '', menu = '';
                     if (data.length > 0) {
                         for (i = 0; i <= data.length - 1; i++) {
-                            var type = '<i class="fa fa-circle magenta" data-toggle="tooltip" title="Valutativo"></i>',
+                            switch (data[i].type) {
+                                case 0: type = '<i class="fa fa-circle cyan" data-toggle="tooltip" title="' + appMessage.modelType_0 + '"></i>'; break;
+                                case 1: type = '<i class="fa fa-circle magenta" data-toggle="tooltip" title="' + appMessage.modelType_1 + '"></i>'; break;
+                                case 2: type = '<i class="fa fa-circle orange" data-toggle="tooltip" title="' + appMessage.modelType_2 + '"></i>'; break;
+                            }
                             menu =
                                 '<div class="dropdown">' +
                                     '<div class="dropdown-toggle" data-toggle="dropdown">' +

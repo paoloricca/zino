@@ -56,16 +56,28 @@ var message = {
     ita: "Clicca qui per iniziare la ricerca",
     eng: "Loading..."
   },
+  modelType_0: {
+      ita: "Informativo",
+      eng: "",
+  },
+  modelType_1: {
+      ita: "Valutativo",
+      eng: "",
+  },
+  modelType_2: {
+      ita: "Combinato",
+      eng: "",
+  },
   evaluationType_1: {
-      ita: "Consentono di raccogliere informazioni ma non possono essere sottoposte a valutazione, <b class=cRosso>se scegli questo tipo la sezione potrà contenere solo domande informative</b>.",
+      ita: "Consente di raccogliere informazioni che non possono essere sottoposte a valutazione, se scegli questo tipo potrai includere solo domande informative.",
       eng: "",
   },
   evaluationType_2: {
-      ita: "Consentono di raccogliere informazioni ed assegnare un voto alla risposta ottenuta, <b class=cRosso>se scegli questo tipo la sezione potrà contenere solo domande valutative</b>.",
+      ita: "Consente di raccogliere informazioni ed assegnare un voto alla risposta ottenuta, se scegli questo tipo potrai includere solo domande valutative.",
       eng: "",
   },
   evaluationType_3: {
-      ita: "Se scegli questo tipo la sezione potrà includere contemporaneamente domande informative e valutative.",
+      ita: "Se scegli questo tipo potrai includere contemporaneamente domande informative e valutative.",
       eng: "",
   },
 }
@@ -85,5 +97,8 @@ var appMessage = {
   initSearch: message.initSearch[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
   evaluationType_1: message.evaluationType_1[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
   evaluationType_2: message.evaluationType_2[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
-  evaluationType_3: message.evaluationType_3[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()]
+  evaluationType_3: message.evaluationType_3[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
+  modelType_0: message.modelType_0[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
+  modelType_1: message.modelType_1[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
+  modelType_2: message.modelType_2[JSON.parse(localStorage.getItem("session")).lang.toLowerCase()],
 }

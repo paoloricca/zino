@@ -7,7 +7,8 @@
 .primary-c {
     color:orangered;
 }
-.cyan { color: cyan; }
+.green { color: greenyellow; }
+.cyan { color: #0094ff; }
 .magenta { color:magenta; }
 .orange { color:orange; }
 #dLogin label, #dLogin a { color:#505050; text-decoration:none; font-weight:normal;}
@@ -35,10 +36,13 @@
 .modal-header {
     border-bottom:1px solid orangered;
 }
+.required
+    { color:tomato; float:left; font-weight:normal; margin-right:4px; }
 .slab {
     font-family:'Roboto Slab';
 }
-.modal-content { font-family: 'RobotoRegular'; }
+.popover h5 { line-height:150%; }
+.modal-content {  }
 .modal-title, #messageHeader span
     { font-weight:700; }
 #dBackBanner { font-family: 'RobotoRegular'; }

@@ -10,47 +10,53 @@
                 </h4>
             </div>
             <div class="modal-body">
-                <div class="col-xs-12">
+                <div class="form-group">
+                    <span class="required">*</span>
                     <label id="lbl-modal-models-edit-descE" for="txt-modal-models-edit-descE">Titolo</label>
                     <input id="txt-modal-models-edit-descE" type="text" class="form-control input-xs" placeholder="Scrivi qui la descrizione del formulario..." />
                 </div>
-                <div class="col-xs-12">
+                <div class="form-group">
+                    <span class="required">*</span>
                     <label id="lbl-modal-models-edit-descE" for="txt_IDEvaluationType">Tipo</label>
                     <div class="dropdown input-xs">
-                        <input type="hidden" id="txt_IDEvaluationType" />
-                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"
-                                style="width:100%;">
-                            <span class="control-label pull-left" ita="..." eng="..."></span>
-                            <span class="caret pull-right"></span>
+                        <input type="hidden" id="txt-model-type-value" />
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" style="width:100%;">
+                            <span id="spn-model-type-selected-text" class="control-label pull-left" ita="..." eng="..."></span>
+                            <span class="fa fa-caret-down fa-lg pull-right"></span>
                         </button>
                         <ul class="dropdown-menu combo" style="width:100%;">
                             <li>
                                 <a href="#">
+                                    <span value="" class="control-label">...</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
                                     <i class="fa fa-circle cyan"></i>&nbsp;&nbsp;
-                                    <span id="span-1" value="1" class="control-label" ita="Informative" eng="Informative"
+                                    <span id="spn-model-type-selected-text-0" value="0" class="control-label" ita="Informativo" eng="Informative"
                                           data-toggle="popover" data-trigger="hover"></span>
                                     <script>
-                                        $("#span-1").attr('data-content', '<h5><i class="fa fa-question-circle pull-left"></i>' + appMessage.evaluationType_1 + '</h5>');
+                                        $("#spn-modal-type-selected-text-0").attr('data-content', '<h5><i class="fa fa-question-circle pull-left"></i>' + appMessage.evaluationType_1 + '</h5>');
                                     </script>
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
                                     <i class="fa fa-circle magenta"></i>&nbsp;&nbsp;
-                                    <span id="span-2" value="2" class="control-label infopop" ita="Valutative" eng="Evaluative" 
+                                    <span id="spn-model-type-selected-text-1" value="1" class="control-label infopop" ita="Valutativo" eng="Evaluative"
                                           data-toggle="popover" data-trigger="hover"></span>
                                     <script>
-                                        $("#span-2").attr('data-content', '<h5><i class="fa fa-question-circle pull-left"></i>' + appMessage.evaluationType_2 + '</h5>');
+                                        $("#spn-model-type-selected-text-1").attr('data-content', '<h5><i class="fa fa-question-circle pull-left"></i>' + appMessage.evaluationType_2 + '</h5>');
                                     </script>
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
                                     <i class="fa fa-circle orange"></i>&nbsp;&nbsp;
-                                    <span id="span-3" value="3" class="control-label infopop" ita="Combinate" eng="Combined" 
+                                    <span id="spn-model-type-selected-text-2" value="1" class="control-label infopop" ita="Combinato" eng="Combined"
                                           data-toggle="popover" data-trigger="hover"></span>
                                     <script>
-                                        $("#span-3").attr('data-content', '<h5><i class="fa fa-question-circle pull-left"></i>' + appMessage.evaluationType_3 + '</h5>');
+                                        $("#spn-model-type-selected-text-2").attr('data-content', '<h5><i class="fa fa-question-circle pull-left"></i>' + appMessage.evaluationType_3 + '</h5>');
                                     </script>
                                 </a>
                             </li>

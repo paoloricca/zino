@@ -24,6 +24,7 @@
         $("#modal-models-edit-title").html("Modifica il formulario selezionato");
         _app_view_models_edit._id = $(e.toElement).parent("li").parent("ul").attr("id");
         _app_view_models_edit.descE = $(e.toElement).parent("li").parent().parent().parent().parent().children("td").html();
+        _app_view_models_edit.type = 0;
         _app_view_models_edit.onConfirm = "editModels_click_onConfirm";
         _app_view_models_edit.show();
     },

@@ -2,7 +2,7 @@
     $(".dropdown-menu.combo li a").click(function () {
         $(this).parent().parent().parent().children("input").val($(this).children("span").attr("value"));
         $(this).parent().parent().parent().children("button").children(".control-label").html($(this).html());
-
+        $(".popover").hide();
         //alert($(this).children("span").attr("value"));
         //if (window["classType_Change"]) {
         //    window["classType_Change"]($(this).children("span").attr("value"));
