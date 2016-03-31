@@ -10,59 +10,70 @@
                 </h4>
             </div>
             <div class="modal-body">
-                <div class="form-group">
-                    <span class="required">*</span>
-                    <label id="lbl-modal-models-edit-descE" for="txt-modal-models-edit-descE">Titolo</label>
-                    <input id="txt-modal-models-edit-descE" type="text" class="form-control input-xs" placeholder="Scrivi qui la descrizione del formulario..." />
-                </div>
-                <div class="form-group">
-                    <span class="required">*</span>
-                    <label id="lbl-modal-models-edit-descE">Tipo</label>
-                    <div class="dropdown input-xs">
-                        <input type="hidden" id="txt-model-type-value" />
-                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" style="width:100%;">
-                            <span id="spn-model-type-selected-text" class="control-label pull-left">...</span>
-                            <span class="fa fa-caret-down fa-lg pull-right"></span>
-                        </button>
-                        <ul class="dropdown-menu combo" style="width:100%;">
-                            <li>
-                                <a href="#">
-                                    <span value="" class="control-label">...</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-circle cyan"></i>&nbsp;&nbsp;
-                                    <span id="spn-model-type-selected-text-0" value="0" class="control-label" ita="Informativo" eng="Informative"
-                                          data-toggle="popover" data-trigger="hover"></span>
-                                    <script>
-                                        $("#spn-model-type-selected-text-0").attr('data-content', '<h5><i class="fa fa-question-circle pull-left"></i>' + appMessage.evaluationType_1 + '</h5>');
-                                    </script>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-circle magenta"></i>&nbsp;&nbsp;
-                                    <span id="spn-model-type-selected-text-1" value="1" class="control-label infopop" ita="Valutativo" eng="Evaluative"
-                                          data-toggle="popover" data-trigger="hover"></span>
-                                    <script>
-                                        $("#spn-model-type-selected-text-1").attr('data-content', '<h5><i class="fa fa-question-circle pull-left"></i>' + appMessage.evaluationType_2 + '</h5>');
-                                    </script>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-circle orange"></i>&nbsp;&nbsp;
-                                    <span id="spn-model-type-selected-text-2" value="2" class="control-label infopop" ita="Combinato" eng="Combined"
-                                          data-toggle="popover" data-trigger="hover"></span>
-                                    <script>
-                                        $("#spn-model-type-selected-text-2").attr('data-content', '<h5><i class="fa fa-question-circle pull-left"></i>' + appMessage.evaluationType_3 + '</h5>');
-                                    </script>
-                                </a>
-                            </li>
-                        </ul>
+                <form id="model-edit-form" data-toggle="validator" role="form">
+                    <div id="messages"></div>
+                    <div class="form-group">
+                        <span class="required">
+                            <i class="fa fa-asterisk"></i>
+                        </span>
+                        <label id="lbl-modal-models-edit-descE" for="txt_model_descE" 
+                               class="control-label">Titolo</label>
+                        <input id="txt_model_descE" type="text" class="form-control input-xs req" 
+                               placeholder="Scrivi qui la descrizione del formulario..." maxlength="30" />
                     </div>
-                </div>
+                    <div class="form-group">
+                        <span class="required">
+                            <i class="fa fa-asterisk"></i>
+                        </span>
+                        <label id="lbl-modal-models-edit-descE" class="control-label">
+                            Tipo
+                        </label>
+                        <input type="text" id="txt-model-type-value" class="control-hidden req" />
+                        <div class="dropdown input-xs">
+                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" style="width:100%;">
+                                <span id="spn-model-type-selected-text" class="pull-left">...</span>
+                                <span class="fa fa-caret-down pull-right"></span>
+                            </button>
+                            <ul class="dropdown-menu combo" style="width:100%;">
+                                <li>
+                                    <a href="#">
+                                        <span value="">...</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-circle cyan"></i>&nbsp;&nbsp;
+                                        <span id="spn-model-type-selected-text-0" value="0" class="control-label" ita="Informativo" eng="Informative"
+                                              data-toggle="popover" data-trigger="hover"></span>
+                                        <script>
+                                    $("#spn-model-type-selected-text-0").attr('data-content', '<h5><i class="fa fa-question-circle pull-right"></i>' + appMessage.evaluationType_1 + '</h5>');
+                                        </script>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-circle magenta"></i>&nbsp;&nbsp;
+                                        <span id="spn-model-type-selected-text-1" value="1" class="control-label infopop" ita="Valutativo" eng="Evaluative"
+                                              data-toggle="popover" data-trigger="hover"></span>
+                                        <script>
+                                            $("#spn-model-type-selected-text-1").attr('data-content', '<h5><i class="fa fa-question-circle pull-right"></i>' + appMessage.evaluationType_2 + '</h5>');
+                                        </script>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-circle orange"></i>&nbsp;&nbsp;
+                                        <span id="spn-model-type-selected-text-2" value="2" class="control-label infopop" ita="Combinato" eng="Combined"
+                                              data-toggle="popover" data-trigger="hover"></span>
+                                        <script>
+                                            $("#spn-model-type-selected-text-2").attr('data-content', '<h5><i class="fa fa-question-circle pull-right"></i>' + appMessage.evaluationType_3 + '</h5>');
+                                        </script>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" id="btnOk"><strong>OK</strong></button>

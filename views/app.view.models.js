@@ -1,8 +1,9 @@
 ﻿var app_view_models = Backbone.View.extend({
     events: {
         "click #btnAddModels": "addModels_click",
-        "click #btnEditModels": "editModels_click",
-        "click #btnDeleteModels": "deleteModels_click",
+        "click #btnEditModel": "editModel_click",
+        "click #btnStructureModel": "structureModel_click",
+        "click #btnDeleteModel": "deleteModel_click",
     },
     initialize: function () {
         this.render();
@@ -21,7 +22,7 @@
         _app_view_models_edit.onConfirm = "addModels_click_onConfirm";
         _app_view_models_edit.show();
     },
-    editModels_click: function (e) {
+    editModel_click: function (e) {
         $("#modal-models-edit-title").html("Modifica il formulario selezionato");
         _app_view_models_edit._id = $(e.toElement).parent("li").parent("ul").attr("id");
         spinner.show();
@@ -45,7 +46,12 @@
             }
         });
     },
-    deleteModels_click: function (e) {
+    structureModel_click: function (e) {
+        //$("#modal-models-edit-title").html("Modifica il formulario selezionato");
+        _app_view_models_content._id = $(e.toElement).parent("li").parent("ul").attr("id");
+        _app_view_models_content.render();
+    },
+    deleteModel_click: function (e) {
         _app_view_models_edit._id = $(e.toElement).parent("li").parent("ul").attr("id");
         appAlert.hideTitle = true;
         appAlert.collection.defaultConfirm = appMessage.defaultConfirm;

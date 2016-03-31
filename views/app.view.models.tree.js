@@ -56,14 +56,14 @@
                             menu =
                                 '<div class="dropdown">' +
                                     '<div class="dropdown-toggle" data-toggle="dropdown">' +
-                                        '<a class="btn btn-xs fa fa-angle-down" data-toggle="tooltip" title="Menu"></a>' +
+                                        '<i class="btn btn-xs fa fa-caret-down" data-toggle="tooltip" title="Menu"></i>' +
                                     '</div>' +
                                     '<ul id="' + data[i]._id + '" class="dropdown-menu">' +
-                                        '<li><a href="#" id="btnEditModels">Modifica</a></li>' +
+                                        '<li><a href="#" id="btnEditModel">Modifica</a></li>' +
                                         '<li class="divider"></li>' +
-                                        '<li><a href="#">Anteprima</a></li>' +
-                                        '<li><a href="#">Struttura</a></li>' +
-                                        '<li><a href="#" id="btnDeleteModels">Elimina</a></li>' +
+                                        '<li><a href="#" id="btnPreviewModel">Anteprima</a></li>' +
+                                        '<li><a href="#" id="btnStructureModel">Struttura</a></li>' +
+                                        '<li><a href="#" id="btnDeleteModel">Elimina</a></li>' +
                                     '</ul>' +
                                 '</div>';
                             models.append(

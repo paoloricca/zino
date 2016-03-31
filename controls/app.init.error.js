@@ -1,4 +1,13 @@
-﻿var error = Backbone.View.extend({
+﻿var error = Backbone.Model.extend({
+    defaults: {
+        descE: "",
+        targetID: ""
+    }
+});
+var errors = Backbone.Collection.extend({
+    model: error
+});
+var view_error = Backbone.View.extend({
     title: null,
     text: "",
     initialize: function () {
@@ -32,7 +41,7 @@
 });
 /* {initialize} system-objects */
 $(function () {
-    appError = new error({
+    appError = new view_error({
         collection: {
             id: "container_error",
         }

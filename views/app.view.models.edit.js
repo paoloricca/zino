@@ -17,9 +17,9 @@
     draw: function () {
         var self = this;
         if (this.descE != null && this.descE != "") {
-            $("#txt-modal-models-edit-descE").val(this.descE);
+            $("#txt_model_descE").val(this.descE);
         } else {
-            $("#txt-modal-models-edit-descE").val("");
+            $("#txt_model_descE").val("");
         }
         if (this.type != null && this.type.toString() != "") {
             $("#txt-model-type-value").val(this.type);
@@ -32,16 +32,19 @@
     },
     show: function () {
         this.draw();
+        initLabel();
         $("#modal-models-edit").modal();
     },
     hide: function () {
         $("#modal-models-edit").modal("hide");
     },
     btnOk_click: function () {
-        this.descE = $("#txt-modal-models-edit-descE").val();
-        this.type = $("#txt-model-type-value").val();
-        if (this.onConfirm != null) {
-            window[this.onConfirm]();
+        if (validator("model-edit-form")) {
+            this.descE = $("#txt_model_descE").val();
+            this.type = $("#txt-model-type-value").val();
+            if (this.onConfirm != null) {
+                window[this.onConfirm]();
+            }
         }
     },
 });

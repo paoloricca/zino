@@ -1,9 +1,9 @@
 ﻿function initCustomCtl() {
     $(".dropdown-menu.combo li a").click(function () {
-        $(this).parent().parent().parent().children("input").val($(this).children("span").attr("value"));
-        $(this).parent().parent().parent().children("button").children(".control-label").html($(this).html());
+        $(this).parent().parent().parent().parent().children("input").val($(this).children("span").attr("value"));
+        $(this).parent().parent().parent().children("button").children(".pull-left").html($(this).html());
         $(".popover").hide();
-        //alert($(this).children("span").attr("value"));
+        //alert($(this).parent().parent().parent().parent().children("input").val());
         //if (window["classType_Change"]) {
         //    window["classType_Change"]($(this).children("span").attr("value"));
         //}

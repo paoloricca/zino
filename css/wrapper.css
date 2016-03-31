@@ -7,6 +7,8 @@
 .primary-c {
     color:orangered;
 }
+.default { color:#303030; }
+.ok { color:green; }
 .green { color: greenyellow; }
 .cyan { color: #0094ff; }
 .magenta { color:magenta; }
@@ -36,10 +38,32 @@
 .modal-header {
     border-bottom:1px solid orangered;
 }
+.bs-caret .caret {
+    margin-right:16px;
+}
+.text-shadow {
+    text-shadow: 4px 4px 10px #101010;
+}
+.box-shadow {
+    box-shadow: 2px 3px 0px #101010;
+}
+.document {
+    box-shadow: 7px 9px 0px #101010; 
+    -moz-border-radius:1px; 
+    -webkit-border-radius:1px; 
+    border-radius:1px; 
+    behavior:url('border-radius.htc');
+}
 .required
-    { color:tomato; float:left; font-weight:normal; margin-right:4px; }
+    { color:tomato; font-size:75%; margin-right:2px; font-weight:normal; }
 .slab {
     font-family:'Roboto Slab';
+}
+.labelReq { color:tomato; }
+.control-label { }
+.control-hidden
+{
+    opacity:0; filter: alpha(opacity=0); width:0;
 }
 .popover h5 { line-height:150%; }
 .modal-content {  }

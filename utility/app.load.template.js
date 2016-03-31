@@ -27,8 +27,6 @@ function loadTemplate(container, fncName, tmpName) {
 		console.log(getDelegateName(arguments), err.message);
 	}
 }
-
-
 $.fn.extend({
 	treed: function () {
 		return this.each(function () {

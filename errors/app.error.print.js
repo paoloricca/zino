@@ -1,4 +1,8 @@
-﻿function getDelegateName(arguments) {
+﻿function setFocusToEl(el) {
+    $(el).parent().find(".control-label").attr("class", "labelReq");
+    el.focus(); $("html, body").animate({ scrollTop: eval(el.offset().top) + eval(-100) }, "slow");
+}
+function getDelegateName(arguments) {
     try {
         return arguments.callee.toString().match(/function ([^\(]+)/)[1];
     } catch (err) {
@@ -36,8 +40,6 @@ function displayErrors(errors) {
     errors.each(function (model, index, list) {
         if (index == 0) {
             setFocusToEl($("#" + model.get("targetID")));
-            //$("#" + model.get("targetID")).focus();
-            //$("html, body").animate({ scrollTop: eval($("#" + model.get("targetID")).offset().top)+eval(-100) }, "slow");
         }
         //$('#stringError').append("<li>" + model.get("descE") + "</li>");
     });
