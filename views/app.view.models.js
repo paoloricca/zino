@@ -33,7 +33,7 @@
             success: function (data, textStatus, jqXHR) {
                 console.log(data);
                 if (data.length > 0) {
-                    _app_view_models_edit.descE = data[0].descE
+                    _app_view_models_edit.descE = data[0].descE;
                     _app_view_models_edit.type = data[0].type;
                     _app_view_models_edit.onConfirm = "editModels_click_onConfirm";
                     _app_view_models_edit.show();
@@ -46,11 +46,6 @@
             }
         });
     },
-    structureModel_click: function (e) {
-        //$("#modal-models-edit-title").html("Modifica il formulario selezionato");
-        _app_view_models_content._id = $(e.toElement).parent("li").parent("ul").attr("id");
-        _app_view_models_content.render();
-    },
     deleteModel_click: function (e) {
         _app_view_models_edit._id = $(e.toElement).parent("li").parent("ul").attr("id");
         appAlert.hideTitle = true;
@@ -58,6 +53,11 @@
         appAlert.collection.onConfirm = "deleteModels_click_onConfirm";
         appAlert.show();
 
+    },
+    structureModel_click: function (e) {
+        //$("#modal-models-edit-title").html("Modifica il formulario selezionato");
+        _app_view_models_content._id = $(e.toElement).parent("li").parent("ul").attr("id");
+        _app_view_models_content.loadStructure();
     },
 });
 $(function () {

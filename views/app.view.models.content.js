@@ -10,24 +10,59 @@
         this.draw();
     },
     render: function () {
-        //this.$el.html("Content-" + this._id);
+        this.$el.html(loadTemplate(this.$el, 'app.template.models.content'));
     },
     draw: function () {
-        var self = this;
-        //if (this.descE != null && this.descE != "") {
-        //    $("#txt_model_descE").val(this.descE);
-        //} else {
-        //    $("#txt_model_descE").val("");
-        //}
-        //if (this.type != null && this.type.toString() != "") {
-        //    $("#txt-model-type-value").val(this.type);
-        //    $("#spn-model-type-selected-text").html(
-        //        $("#spn-model-type-selected-text-" + this.type).parent("a").html());
-        //} else {
-        //    $("#txt-model-type-value").val("");
-        //    $("#spn-model-type-selected-text").html("...");
-        //}
+
     },
+    loadPreview: function () {
+
+    },
+    loadStructure: function () {
+        spinner.show();
+        $.ajax({
+            url: appConfig.apiPrefix + 'models/' + this._id,
+            dataType: 'json',
+            type: 'get',
+            success: function (data, textStatus, jqXHR) {
+                console.log(data);
+                if (data.length > 0) {
+                    $("#modelTitle").html(data[0].descE);
+                    //_app_view_models_edit.type = data[0].type;
+
+                    /* revisions */
+                    $.ajax({
+                        url: appConfig.apiPrefix + 'modelsRevisions',
+                        dataType: 'json',
+                        type: 'get',
+                        data: {
+                            idModel: data[0]._id
+                        },
+                        success: function (data, textStatus, jqXHR) {
+                            if (data.length > 0) {
+                                var idRevision = data[0]._id;
+
+
+                            } else {
+                                // no revisions founded.
+                            }
+                            spinner.hide();
+                        },
+                        error: function (request, error) {
+                            displayError(error);
+                            spinner.hide();
+                        }
+                    });
+                    
+                }
+                spinner.hide();
+            },
+            error: function (request, error) {
+                displayError(error);
+                spinner.hide();
+            }
+        });
+    }
     //show: function () {
     //    this.draw();
     //    initLabel();
